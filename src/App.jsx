@@ -1,26 +1,26 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Home from './views/Home';
-import Search from './views/Search';
-import Pokemon from './views/Pokemon';
-import './App.css';
-import PokemonContext from "./context/PokemonContext";
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Home from './views/Home'
+import Search from './views/Search'
+import Pokemon from './views/Pokemon'
+import './App.css'
+import PokemonContext from "./context/PokemonContext"
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-    getAllPokemons();
+    getAllPokemons()
   }, []);
 
   const getAllPokemons = async () => {
     try {
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
-      const data = await res.json();
-      setData(data.results);
+      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+      const data = await res.json()
+      setData(data.results)
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error)
     }
   };
 
@@ -40,7 +40,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </PokemonContext.Provider>
-  );
+  )
 }
 
-export default App;
+export default App

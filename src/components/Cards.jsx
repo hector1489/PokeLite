@@ -1,8 +1,7 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card'
 
 const Cards = (props) => {
-  const { info } = props;
+  const { info } = props
 
   return (
     <div className="galeria grid-columns-5 p-3">
@@ -23,7 +22,7 @@ const Cards = (props) => {
         </Card.Body>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Cards

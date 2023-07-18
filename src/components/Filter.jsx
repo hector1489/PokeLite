@@ -1,17 +1,17 @@
-import { useState, useContext } from "react";
-import { Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import PokemonContext from "../context/PokemonContext";
+import { useState, useContext } from "react"
+import { Form, Button } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+import PokemonContext from "../context/PokemonContext"
 
 const Filter = () => {
-  const { data } = useContext(PokemonContext);
-  const [idPokemon, setIdPokemon] = useState(null);
-  const navigate = useNavigate();
+  const { data } = useContext(PokemonContext)
+  const [idPokemon, setIdPokemon] = useState(null)
+  const navigate = useNavigate()
 
   const handlePokemon = (e) => {
-    const nomPokemon = e.target.value;
-    setIdPokemon(nomPokemon);
-  };
+    const nomPokemon = e.target.value
+    setIdPokemon(nomPokemon)
+  }
 
   return (
     <div className="form-box">
@@ -25,7 +25,7 @@ const Filter = () => {
       </Form.Select>
       <Button variant="dark" onClick={() => navigate(`/pokemon/${idPokemon}`)}>Buscar</Button>
     </div>
-  );
-};
+  )
+}
 
-export default Filter;
+export default Filter

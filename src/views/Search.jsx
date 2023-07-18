@@ -1,4 +1,4 @@
-import Filter from "../components/Filter";
+import Filter from "../components/Filter"
 
 
 const Search = () => {
@@ -11,4 +11,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Search

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
-import Cards from "../components/Cards";
+import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
+import Cards from "../components/Cards"
 
 
 const Pokemon = () => {
@@ -8,14 +8,14 @@ const Pokemon = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    getPokemon(id);
-  }, []);
+    getPokemon(id)
+  }, [])
 
   const getPokemon = async (pokemonId) => {
     const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
     const users = await data.json()
     setInfo(users)
-  };
+  }
 
   return (
     <div className="box2">
@@ -24,7 +24,7 @@ const Pokemon = () => {
         info={info}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Pokemon;
+export default Pokemon

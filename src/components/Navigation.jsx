@@ -1,9 +1,9 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 const Navigation = () => {
   const setActiveClass = ({ isActive }) =>
-   (isActive ? "text-white text-decoration-none me-3" : "text-secondary text-decoration-none me-3");
+   (isActive ? "text-white text-decoration-none me-3" : "text-secondary text-decoration-none me-3")
 
   return (
     <Navbar bg="dark" data-bs-theme="dark" expand="md">
@@ -20,7 +20,7 @@ const Navigation = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

@@ -6,7 +6,7 @@ const Home = () => {
       <p>"¡Prepárate para alucinar!".</p>
       <img src="/img/rocketTeams.png" alt="" />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
