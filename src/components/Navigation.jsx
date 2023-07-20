@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Navigation = () => {
   const setActiveClass = ({ isActive }) =>
-   (isActive ? "text-white text-decoration-none me-3" : "text-secondary text-decoration-none me-3")
+   (isActive ? "text-danger fw-bold text-decoration-none me-3" : "text-secondary text-decoration-none me-3")
 
   return (
     <Navbar bg="dark" data-bs-theme="dark" expand="md">

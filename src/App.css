@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Se agrega box-sizing para ajustar el modelo de caja */
 }
 
 body {

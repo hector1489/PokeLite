@@ -16,7 +16,7 @@ const Filter = () => {
   return (
     <div className="form-box">
       <Form.Select aria-label="Default select example" size="sm" onChange={handlePokemon}>
-        <option>Search</option>
+        <option>Elige a tu compañero</option>
         {data && data.map((item) => (
           <option value={item.name} key={item.name}>
             {item.name}
