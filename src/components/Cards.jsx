@@ -12,12 +12,17 @@ const Cards = (props) => {
   // array con los nombres de los stats en pokeApi y  ocupar el confiable map
   const statNames = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
 
+ //F. guion por espacion
+  const formatName = (name) => {
+    return name.replace(/-/g, ' ');
+  };
+
   return (
     <div className="galeria grid-columns-5 p-3">
       <Card style={{ width: '18rem' }} className="text-center card-pokemon">
-        <Card.Img variant="top" src={info.sprites.other['official-artwork'].front_default} />
+        <Card.Img variant="top" src={info.sprites.front_default} />
         <Card.Body>
-          <Card.Title>{info.name}</Card.Title>
+          <Card.Title>{formatName(info.name)}</Card.Title>
           <Card.Text>
             <ul>
               {info.stats.map((stat, index) => (
