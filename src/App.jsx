@@ -4,6 +4,7 @@ import Navigation from './components/Navigation'
 import Home from './views/Home'
 import Search from './views/Search'
 import Pokemon from './views/Pokemon'
+import NotFound from './views/NotFound'
 import './App.css'
 import PokemonContext from "./context/PokemonContext"
 
@@ -12,7 +13,7 @@ function App() {
 
   useEffect(() => {
     getAllPokemons()
-  }, []);
+  }, [])
 
   const getAllPokemons = async () => {
     try {
@@ -22,7 +23,7 @@ function App() {
     } catch (error) {
       console.error('Error fetching data:', error)
     }
-  };
+  }
 
   const globalState = {
     data,
@@ -36,7 +37,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/pokemon/:id" element={<Pokemon />} />
+          <Route path="/search/:id" element={<Pokemon />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </PokemonContext.Provider>
