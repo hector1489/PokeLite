@@ -5,7 +5,7 @@ import PokemonContext from "../context/PokemonContext"
 
 const Filter = () => {
   const { data } = useContext(PokemonContext)
-  const [idPokemon, setIdPokemon] = useState(null)
+  const [idPokemon, setIdPokemon] = useState("Elige a tu compañero")
   const navigate = useNavigate()
 
   const handlePokemon = (e) => {
@@ -13,18 +13,26 @@ const Filter = () => {
     setIdPokemon(nomPokemon)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(idPokemon === "Elige a tu compañero") {
+      return alert("Debes seleccionar un pokemon valido...")
+    }
+    navigate(`/search/${idPokemon}`)
+  }
+
   return (
-    <div className="form-box">
-      <Form.Select aria-label="Default select example" size="sm" onChange={handlePokemon}>
-        <option>Elige a tu compañero</option>
-        {data && data.map((item) => (
+    <Form onSubmit={handleSubmit} className="form-box">
+      <Form.Select aria-label="Default select example" size="sm" onChange={handlePokemon} defaultValue={idPokemon}>
+        <option disabled>Elige a tu compañero</option>
+        {data?.map((item) => (
           <option value={item.name} key={item.name}>
             {item.name}
           </option>
         ))}
       </Form.Select>
-      <Button variant="dark" onClick={() => navigate(`/pokemon/${idPokemon}`)}>Buscar</Button>
-    </div>
+      <Button variant="dark" type="submit">Buscar</Button>
+    </Form>
   )
 }
 

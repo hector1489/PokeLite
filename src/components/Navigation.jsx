@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import logo from "../assets/Logo_Team_GO_Rocket.png"
 
 const Navigation = () => {
   const setActiveClass = ({ isActive }) =>
@@ -9,7 +10,9 @@ const Navigation = () => {
     <Navbar bg="dark" data-bs-theme="dark" expand="md">
       <Container>
         <Navbar.Brand>
-          <img className="img-navbar" src="img/Logo_Team_GO_Rocket.png" alt="Logo_Team_GO_Rocket" />
+          <NavLink to="/">
+            <img className="img-navbar" src={logo} alt="Logo_Team_GO_Rocket" />
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
